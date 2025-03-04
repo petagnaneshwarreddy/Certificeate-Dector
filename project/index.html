@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Certificate Blockchain</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/" aria-current="page"><i class="fas fa-home"></i> Home</a>
+      <a href="/page2.html"><i class="fas fa-certificate"></i> Verify Certificate</a>
+    </nav>
+    <main>
+      <h1><i class="fas fa-graduation-cap"></i> Certificate Generation</h1>
+      <div class="certificate-form">
+        <div class="form-group">
+          <label for="name"><i class="fas fa-user"></i> Student Name:</label>
+          <input type="text" id="name" placeholder="Enter student name">
+        </div>
+        <div class="form-group">
+          <label for="course"><i class="fas fa-book"></i> Course Name:</label>
+          <input type="text" id="course" placeholder="Enter course name">
+        </div>
+        <div class="form-group">
+          <label for="date"><i class="fas fa-calendar-alt"></i> Date of Completion:</label>
+          <input type="date" id="date">
+        </div>
+        <div class="form-group">
+          <label for="grade"><i class="fas fa-star"></i> Grade/Score:</label>
+          <input type="text" id="grade" placeholder="Enter grade or score">
+        </div>
+        <button id="generate-btn"><i class="fas fa-file-alt"></i> Generate Certificate</button>
+      </div>
+      
+      <div id="certificate-display" class="hidden">
+        <h2><i class="fas fa-award"></i> Generated Certificate</h2>
+        <div class="certificate">
+          <h3>Certificate of Completion</h3>
+          <p>This is to certify that</p>
+          <p class="cert-name" id="cert-name"></p>
+          <p>has successfully completed the course</p>
+          <p class="cert-course" id="cert-course"></p>
+          <p>with a grade of <span id="cert-grade"></span></p>
+          <p>Date: <span id="cert-date"></span></p>
+          <div class="cert-hash">
+            <p><i class="fas fa-fingerprint"></i> Certificate Hash:</p>
+            <p id="cert-hash" class="hash-value"></p>
+          </div>
+        </div>
+        <button id="add-to-blockchain"><i class="fas fa-link"></i> Add to Blockchain</button>
+      </div>
+      
+      <div id="blockchain-info" class="hidden">
+        <h2><i class="fas fa-cubes"></i> Blockchain Information</h2>
+        <div class="blockchain-container">
+          <div id="blockchain-blocks"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

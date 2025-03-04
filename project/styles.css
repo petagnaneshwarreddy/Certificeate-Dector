@@ -1,0 +1,483 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #3a5a8c;
+  --primary-light: #4a6fa5;
+  --primary-dark: #2a4a7c;
+  --secondary-color: #f8f9fa;
+  --accent-color: #ffc107;
+  --text-dark: #333;
+  --text-light: #f8f9fa;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  background-color: #f0f2f5;
+  line-height: 1.6;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  border-bottom: solid 1px #ddd;
+  background-color: var(--primary-color);
+  box-shadow: var(--box-shadow);
+}
+
+nav a {
+  display: inline-block;
+  min-width: 9rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  border: solid 1px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  transition: var(--transition);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+nav a[aria-current='page'] {
+  background-color: var(--primary-dark);
+  border-color: transparent;
+  box-shadow: var(--box-shadow);
+}
+
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--primary-color);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Form Styles */
+.certificate-form, .verification-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  border: 1px solid #eaeaea;
+}
+
+.certificate-form:hover, .verification-form:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--primary-dark);
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: var(--secondary-color);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: var(--transition);
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Certificate Styles */
+.certificate {
+  background-color: white;
+  border: none;
+  padding: 3rem;
+  margin: 2rem 0;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%), 
+                    url('https://www.transparenttextures.com/patterns/cream-paper.png');
+  overflow: hidden;
+}
+
+.certificate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--primary-color);
+}
+
+.certificate::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--primary-color);
+}
+
+.certificate h3 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.certificate p {
+  margin: 0.7rem 0;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.cert-name, .cert-course {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 1.5rem 0;
+  padding: 0.5rem 2rem;
+  display: inline-block;
+  position: relative;
+}
+
+.cert-name::after, .cert-course::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+.cert-hash {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed #ccc;
+}
+
+.hash-value {
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+  background-color: #f8f9fa;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  border: 1px solid #eaeaea;
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+/* Blockchain Display */
+.blockchain-container {
+  margin-top: 2rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: 1px solid #eaeaea;
+}
+
+.block {
+  background-color: #f8f9fa;
+  border: 1px solid #eaeaea;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  position: relative;
+}
+
+.block:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--primary-light);
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+.block-header {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #eaeaea;
+  color: var(--primary-dark);
+}
+
+.block-data {
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+  background-color: white;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  border: 1px solid #eaeaea;
+  margin-bottom: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.block-hash {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Verification Result */
+#verification-result {
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-top: 2.5rem;
+  border: 1px solid #eaeaea;
+}
+
+.valid-result {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: var(--success-color);
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  border-left: 5px solid var(--success-color);
+}
+
+.invalid-result {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--danger-color);
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  border-left: 5px solid var(--danger-color);
+}
+
+.blockchain-details {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+  font-size: 1rem;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+}
+
+/* Certificate Status Styles */
+.certificate-status {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.certificate-status.real {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: var(--success-color);
+  border: 2px solid var(--success-color);
+}
+
+.certificate-status.fake {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: var(--danger-color);
+  border: 2px solid var(--danger-color);
+}
+
+.certificate-status i {
+  font-size: 1.4rem;
+}
+
+/* Add stamp for real certificates */
+.certificate.real::after {
+  content: 'VERIFIED';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 5rem;
+  color: rgba(40, 167, 69, 0.2);
+  font-weight: bold;
+  letter-spacing: 5px;
+  border: 10px solid rgba(40, 167, 69, 0.2);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+  
+  .certificate {
+    padding: 1.5rem;
+  }
+  
+  .cert-name, .cert-course {
+    font-size: 1.4rem;
+  }
+  
+  .certificate h3 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Animation for blocks */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.block {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.block:nth-child(2) { animation-delay: 0.1s; }
+.block:nth-child(3) { animation-delay: 0.2s; }
+.block:nth-child(4) { animation-delay: 0.3s; }
+.block:nth-child(5) { animation-delay: 0.4s; }
+
+/* Animation for verification result */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.certificate-status {
+  animation: pulse 2s infinite;
+}
+
+/* Add watermark to certificate */
+.certificate {
+  position: relative;
+}
+
+.certificate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--primary-color);
+}
+
+/* Add stamp animation */
+@keyframes stampIn {
+  0% { opacity: 0; transform: translate(-50%, -50%) rotate(-30deg) scale(0.5); }
+  50% { opacity: 1; transform: translate(-50%, -50%) rotate(-30deg) scale(1.2); }
+  100% { opacity: 1; transform: translate(-50%, -50%) rotate(-30deg) scale(1); }
+}
+
+.certificate.real::after {
+  animation: stampIn 1s ease-out forwards;
+}
